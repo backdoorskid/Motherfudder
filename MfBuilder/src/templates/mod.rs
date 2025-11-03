@@ -1,0 +1,1 @@
+pub static POWERSHELL_TEMPLATE: &str = include_str!("template.ps1");

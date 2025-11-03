@@ -1,0 +1,10 @@
+{
+    "file_extension": "BAT",
+    "anti_debug": true,
+    "anti_virtual_machine": true,
+    "blacklist_cis_countries": true,
+    "uac_bypass": true,
+    "single_instance": true,
+    "run_on_startup": false,
+    "binder": false
+}
