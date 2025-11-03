@@ -10,6 +10,7 @@ SGN (https://github.com/EgeBalci/sgn)
 
 How to build the crypter:
 First open up MfObfDotNet inside of Visual Studio and compile it
+Then also open up MfRunner (inside the MfBuilder folder) inside of Visual Studio and ccompile that too
 Then open up a command prompt inside of the MfBuilder folder and type "cargo build -r" and press enter to build the MfBuilder
 You will also need two other tools, Donut and SGN (for native payloads, if the payload is .NET then you will not need this)
 Now make a new folder and you will need to copy these things into them:
@@ -20,7 +21,9 @@ donut.exe
 MfBuilder.exe (after you ran cargo build -r it will be in target\release\MfBuilder.exe)
 build.json (this is the config file, it will be included inside of the MfBuilder folder I sent you)
 payload.exe (The actual file you want to crypt)
-MfObfDotNet.exe (will be in build folder for MfObfDotNet after you built in visual studio)
+MfObfDotNet.exe (will be in build folder for MfObfDotNet after you build it in visual studio)
+MfRunner.exe (will be in build folder for MfRunner after you build it in visual studio)
 
 Now run MfBuilder.exe inside this new folder and it will prompt you to upload the encrypted shellcode, once you have uploaded it paste the download link and press enter.
+
 stub.bat will be generated.
