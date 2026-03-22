@@ -1,0 +1,33 @@
+How to refud motherfudder (for windows defender).
+
+What you will need:
+- https://github.com/backdoorskid/Motherfudder
+- Basic reading comprehension, and basic programming (or prompting to AI) knowledge.
+
+1)
+Download the motherfudder source code from the github repo.
+
+2)
+Navigate to MfBuilder\src\templates\template.ps1
+You will need to make some slight adjustments to this powershell command line template, you can choose to do whatever however you must ensure that at least one of these four values is no longer present inside the template.
+
+1) .invoke($
+2) .getmethod
+3) .gettype(
+4) convert]::frombase64string
+
+The changes made to the template must not break this code: https://github.com/backdoorskid/Motherfudder/blob/main/MfBuilder/MfRunner/Utilities/Persistance/
+This can be tested by simply checking whether the startup continues to work following changes to the powershell template.
+
+3)
+You will now need to replace/change the AMSI bypass technique used in Motherfudder.
+
+Patching AmsiScanBuffer should not be done under any circumstance.
+The patches performed on  clr.dll present in the Motherfudder source code also shouldn't be used. They were created by me when I had very little knowledge regarding the subject. I don't think they either worked to be honest. Literally placebo or something.
+
+I recommend using an alternate clr.dll patch. A link to one I created is below,  also ensure that you remove calls to Console.WriteLine that may act as indicators of compromise & use the CustomVirtualProtect function instead of the VirtualProtect function.
+I am not familiar with many other AMSI bypasses that still provide a lack of detection, however I am sure they exist. If you know of another better project, feel free to useit.
+https://github.com/backdoorskid/ClrAmsiScanPatcher
+
+4)
+UD on WD!
